@@ -33,6 +33,7 @@ and a sharp niche.
 | --- | --- |
 | [`STRATEGY.md`](./STRATEGY.md) | Business analysis: niche, model, unit economics, go-to-market, risks |
 | [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) | Tech stack & key engineering decisions (the 2D-canvas → 3D → print pipeline) |
+| [`docs/DESIGN.md`](./docs/DESIGN.md) | Visual & motion language — the "extraordinary, not AI-generated" design system |
 | [`docs/ROADMAP.md`](./docs/ROADMAP.md) | The 8-part build plan mapped to milestones |
 
 ---
