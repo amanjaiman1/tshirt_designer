@@ -1,0 +1,94 @@
+@import "./tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Base
+   ────────────────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: rgb(var(--bg));
+    color: rgb(var(--fg));
+    font-family: theme("fontFamily.sans");
+    font-feature-settings: "ss01", "cv01";
+    overflow-x: hidden;
+  }
+
+  /* Headlines default to the display face with tight tracking — DESIGN.md §4 */
+  h1,
+  h2,
+  h3 {
+    font-family: theme("fontFamily.display");
+    letter-spacing: theme("letterSpacing.tightest");
+    line-height: 0.95;
+  }
+
+  ::selection {
+    background: rgb(var(--c-accent));
+    color: rgb(var(--c-ink));
+  }
+
+  /* Accent focus ring for keyboard users — DESIGN.md §9 */
+  :focus-visible {
+    outline: 2px solid rgb(var(--c-accent));
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Hide the native cursor only on fine-pointer (desktop) devices where our
+     custom cursor takes over. Touch devices keep normal behaviour. */
+  @media (hover: hover) and (pointer: fine) {
+    [data-custom-cursor="on"] {
+      cursor: none;
+    }
+    [data-custom-cursor="on"] a,
+    [data-custom-cursor="on"] button {
+      cursor: none;
+    }
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Components / utilities
+   ────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  .container-edge {
+    @apply mx-auto w-full max-w-edge px-5 sm:px-8 lg:px-12;
+  }
+
+  /* Hairline link with an animated underline */
+  .nav-link {
+    @apply relative text-sm font-medium tracking-tight text-ink/70 transition-colors duration-300 hover:text-ink;
+  }
+  .nav-link::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-px w-0 bg-ink transition-all duration-500;
+    transition-timing-function: var(--ease-expo);
+  }
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Reduced motion — kill all non-essential animation (DESIGN.md §9)
+   ────────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

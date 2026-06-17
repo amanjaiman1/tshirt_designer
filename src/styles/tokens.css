@@ -1,0 +1,31 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   Design tokens — DESIGN.md §3/§6
+   Colours are stored as raw "R G B" triplets so Tailwind's <alpha-value>
+   syntax works (rgb(var(--c-ink) / 0.5)).
+   ────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Owned palette */
+  --c-ink: 14 14 15; /* #0E0E0F near-black */
+  --c-paper: 244 241 234; /* #F4F1EA warm off-white */
+  --c-accent: 198 244 50; /* #C6F432 electric lime */
+  --c-violet: 91 61 245; /* #5B3DF5 */
+  --c-muted: 107 107 107; /* #6B6B6B */
+  --c-line: 226 221 210; /* #E2DDD2 hairline */
+
+  /* Default (light "paper") surface mapping */
+  --bg: var(--c-paper);
+  --fg: var(--c-ink);
+
+  /* Signature easing */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-snap: cubic-bezier(0.3, 0, 0.2, 1);
+
+  color-scheme: light;
+}
+
+/* "Studio" dark surface — used by the designer tool (Part 2+) */
+[data-surface="studio"] {
+  --bg: var(--c-ink);
+  --fg: var(--c-paper);
+  color-scheme: dark;
+}

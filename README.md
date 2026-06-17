@@ -40,18 +40,35 @@ and a sharp niche.
 
 ## Status
 
-🚧 **Foundation / planning stage.** Planning docs are committed. Feature implementation follows
-the 8-part roadmap in [`docs/ROADMAP.md`](./docs/ROADMAP.md).
+🚧 **Part 1 (Project Foundation) complete.** A fast app shell with the full DESIGN.md aesthetic and
+an interactive 3D shirt hero is live. Next: Part 2 (the customizer). Build order:
+[`docs/ROADMAP.md`](./docs/ROADMAP.md).
 
 ## Quickstart
 
-> Will be filled in during **Part 1 (Project Foundation)** once the app scaffold lands.
+Requires Node 18+ (developed on Node 22).
 
 ```bash
-# coming in Part 1
-npm install
-npm run dev
+npm install      # install dependencies
+npm run dev      # start the dev server (http://localhost:5173)
+npm run build    # typecheck + production build
+npm run preview  # preview the production build
 ```
+
+### What's in Part 1
+- **Vite + React 18 + TypeScript + Tailwind**, React Router, Zustand.
+- **Design system** from [`docs/DESIGN.md`](./docs/DESIGN.md): owned palette (CSS vars + Tailwind
+  tokens), Fontshare type (Clash Display + General Sans), grain overlay, signature easing.
+- **Motion stack**: Framer Motion (eager) + GSAP + Lenis smooth scroll (lazy-loaded); custom cursor
+  and magnetic buttons (desktop + fine-pointer only); full `prefers-reduced-motion` support.
+- **3D hero**: react-three-fiber scene with the garment model (auto-centred, recolourable),
+  studio lighting, contact shadow, orbit controls, `frameloop="demand"` + capped DPR, and
+  viewport-gated idle rotation.
+- **App shell**: header/nav, footer, global layout, and a kinetic landing hero with live colour
+  swatches and a club-name marquee.
+
+> The 3D model in `public/models/shirt.glb` is a placeholder (reused from the reference project) and
+> will be swapped for an optimised, licensed garment later.
 
 ---
 
