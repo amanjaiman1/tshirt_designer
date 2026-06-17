@@ -19,6 +19,7 @@ export default defineConfig({
           three: ["three"],
           r3f: ["@react-three/fiber", "@react-three/drei"],
           motion: ["framer-motion", "gsap", "lenis"],
+          fabric: ["fabric"],
         },
       },
     },

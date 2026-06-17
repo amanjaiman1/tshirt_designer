@@ -36,7 +36,7 @@ export function Header() {
 
         <Magnetic>
           <Link
-            to="/"
+            to="/design"
             data-cursor="hover"
             className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors duration-300 hover:bg-violet"
           >

@@ -14,6 +14,7 @@
   "dependencies": {
     "@react-three/drei": "^9.114.3",
     "@react-three/fiber": "^8.17.10",
+    "fabric": "^6.9.1",
     "framer-motion": "^11.11.17",
     "gsap": "^3.12.5",
     "lenis": "^1.1.18",
@@ -24,9 +25,9 @@
     "zustand": "^4.5.5"
   },
   "devDependencies": {
+    "@types/node": "^20.17.6",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@types/node": "^20.17.6",
     "@types/three": "^0.169.0",
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",

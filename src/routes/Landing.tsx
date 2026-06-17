@@ -1,5 +1,6 @@
 import { Suspense, lazy, type ReactNode } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { RevealText } from "@/components/RevealText";
 import { Magnetic } from "@/components/Magnetic";
 import { Marquee } from "@/components/Marquee";
@@ -85,14 +86,14 @@ export function Landing() {
               className="mt-9 flex flex-wrap items-center gap-4"
             >
               <Magnetic strength={0.4}>
-                <a
-                  href="#how"
+                <Link
+                  to="/design"
                   data-cursor="hover"
                   className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-medium text-paper transition-colors duration-300 hover:bg-violet"
                 >
                   Start designing
                   <span aria-hidden>→</span>
-                </a>
+                </Link>
               </Magnetic>
 
               {/* live colour swatches — proof the 3D is interactive */}

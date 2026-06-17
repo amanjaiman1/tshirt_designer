@@ -77,6 +77,33 @@
   .nav-link:hover::after {
     @apply w-full;
   }
+
+  /* Range slider with an accent thumb — used by the customizer controls. */
+  .slider-accent {
+    background-image: none;
+  }
+  .slider-accent::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 9999px;
+    background: rgb(var(--c-accent));
+    border: 2px solid rgb(var(--c-ink));
+    cursor: pointer;
+    transition: transform 0.15s var(--ease-expo);
+  }
+  .slider-accent::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+  }
+  .slider-accent::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 9999px;
+    background: rgb(var(--c-accent));
+    border: 2px solid rgb(var(--c-ink));
+    cursor: pointer;
+  }
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
